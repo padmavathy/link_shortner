@@ -9,9 +9,4 @@ class Link < ActiveRecord::Base
 	self.shortened_url = 6.times.map { chars.sample }.join
   end
 
-  def clicks(url)
-
-  end
-
-
 end
