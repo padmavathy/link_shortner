@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Given url:</strong>
+  <%= @link.given_url %>
+</p>
+
+<p>
+  <strong>Shortened url:</strong>
+  <%= "#{request.base_url}/#{@link.shortened_url}" %>
+</p>
+
+
+<p>
+  <strong>Clicks:</strong>
+  <%= Click.where(link_id: @link.id).map(&:count).inject(:+) %>
+</p>
+
+<%= link_to 'Back', links_path %>
